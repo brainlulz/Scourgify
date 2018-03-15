@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Scourgify</title>
+  <style>
+    body {
+      margin: 0;
+      width: 100%;
+      color: #3F68A0;
+      background: #F5F9F9;
+    }
+
+    img {
+      width: 40%;
+    }
+
+    .buttons {
+      width: 7rem;
+      margin: 1rem;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #btnScourgify {
+      margin-bottom: 0.5rem;
+      grid-row: 1/1;
+      padding: 5px;
+      color: #3F68A0;
+      background: #F5F9F9;
+      border: 2px solid #274A83;
+    }
+
+    #btnScourgify:hover {
+      background: #3F68A0;
+      color: #F5F9F9;
+    }
+
+    #go-to-options {
+      grid-row: 2/2;
+      padding: 5px;
+      color: #3F68A0;
+      background: #F5F9F9;
+      border: 2px solid #274A83;
+    }
+
+    #go-to-options:hover {
+      background: #3F68A0;
+      color: #F5F9F9;
+    }
+  </style>
 </head>
+
 <body>
-  <button id="btnScourgify">Scourgify</button>
-  <button id="go-to-options">Options</button>
-<script src="popup.js"></script></body>
+  <div class="buttons">
+    <button id="btnScourgify">Scourgify tabs</button>
+    <button id="go-to-options">Options</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
 </html>
