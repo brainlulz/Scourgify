@@ -2,21 +2,17 @@
   "manifest_version": 2,
   "name": "Scourgify",
   "description": "Scourgify",
-  "version": "1.0",
+  "version": "0.2",
 
-  "icons": { 
+  "icons": {
     "48": "icon.png"
-   },
+  },
 
-  "permissions": [
-    "tabs",
-    "storage"
-  ],
+  "permissions": ["tabs", "storage"],
   "options_ui": {
     "page": "options.html",
     "chrome_style": true
   },
-
   "browser_action": {
     "default_title": "This is a test",
     "default_icon": "icon.png",

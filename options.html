@@ -6,58 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Options</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<style>
-  body {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    align-items: center;
-    color: #3F68A0;
-    background: #F5F9F9;
-  }
-  .title {
-    grid-row: 1/1;
-    grid-column: 2/span 2;
-  }
-  .addSection {
-    grid-row: 2/2;
-    grid-column: 1/span 3;
-    justify-self: center;
-  }
-  .removeSection {
-    grid-row: 3/3;
-    grid-column: 1/span 3;
-  }
-  .support {
-    grid-row: 4/4;
-    grid-column: 1/4;
-  }
-  .btn {
-    padding: 5px;
-    color: #3F68A0;
-    background: #F5F9F9;
-    border: 2px solid #274A83;
-  }
-  .btn:hover {
-    background: #3F68A0;
-    color: #F5F9F9;
-  }
-  input {
-    color: #3F68A0;
-    background: #F5F9F9;
-    border: 2px solid #274A83;
-  }
-</style>
-
 <body>
-  <div class="title">
-    <h1>Preferences</h1>
-  </div>
+    <p class="title">Preferences</p>
   <div class="addSection">
-    Add a website :
+    Add a complete URL (exemple: "https://www.google.fr"):
     <form action="">
-      <input type="text" name="url">
+      <input type="text" name="url" class="urlTab" />
       <input type="checkbox" name="pin" value="pinned">Pin the tab
       <button type="submit" id="saveUrl" class="btn">Save</button>
     </form>
@@ -66,12 +22,12 @@
     Your urls :
     <button class="btn">X</button>
   </div>
-  <h3 class="support">Want to support ?
+  <p class="support">Want to support ?
     <a href='https://ko-fi.com/L4L8AMS3' target='_blank'>
       <img height='24' style='border:0px;height:24px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com'
       />
     </a>
-  </h3>
+  </p>
   <script src="options.js"></script>
 </body>
 
