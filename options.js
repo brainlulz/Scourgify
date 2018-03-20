@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedMessage = () => {
     // Update status to let user know options were saved.
     const status = document.getElementById("status");
-    status.textContent = "Saved.";
+    status.textContent = "Please refresh to see in the list";
     setTimeout(function() {
       status.textContent = "";
     }, 750);
@@ -53,17 +53,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // stored in chrome.storage.
   function restore_options() {
     // Use default value color = 'red' and likesColor = true.
-    chrome.storage.sync.get(
-      {
-        favoriteColor: "red",
-        likesColor: true
-      },
-      function(items) {
-        document.getElementById("color").value = items.favoriteColor;
-        document.getElementById("like").checked = items.likesColor;
-      }
-    );
+    chrome.storage.sync.get(store => {
+      console.log(store);
+      const savedUrls = store.savedTabs;
+      const ul = document.getElementById("urls");
+      const fragment = document.createDocumentFragment();
+      const savedUrlHTML = savedUrls.map(saved => {
+        const li = document.createElement("li");
+        const url = document.createElement("p");
+        url.innerHTML = saved.url;
+        const pinned = document.createElement("i");
+        pinned.innerHTML = saved.pinned;
+        const removeBtn = document.createElement("button");
+        removeBtn.innerHTML = "X";
+        removeBtn.setAttribute("classe", "btn rmvBtn");
+        li.setAttribute("id", saved.url);
+        li.appendChild(url);
+        li.appendChild(pinned);
+        li.appendChild(removeBtn);
+        fragment.appendChild(li);
+      })
+      ul.appendChild(fragment);
+    });
   }
-  document.addEventListener("DOMContentLoaded", restore_options);
+  restore_options();
   document.getElementById("saveUrl").addEventListener("click", save_options);
 });
