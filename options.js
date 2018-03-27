@@ -49,6 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.clear();
   }
 
+  const rmvButtons = document.getElementsByClassName("rmvBtn");
+  const rmvBtn = rmvButtons.addEventListener("click", e => {
+    e.target.parentNode.id;
+  });
+  function deleteUrl() {
+    chrome.storage.sync.remove(rmvBtn);
+  }
+
   // Restores select box and checkbox state using the preferences
   // stored in chrome.storage.
   function restore_options() {
@@ -72,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         li.appendChild(pinned);
         li.appendChild(removeBtn);
         fragment.appendChild(li);
-      })
+      });
       ul.appendChild(fragment);
     });
   }
